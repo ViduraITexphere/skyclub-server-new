@@ -1,0 +1,3 @@
+Cluster Username - viduraitexphere
+Cluster Password - roRLEpN5PnbGKO4q
+Connection String - mongodb+srv://viduraitexphere:roRLEpN5PnbGKO4q@cluster0.0fmf41p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
