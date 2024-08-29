@@ -6,6 +6,7 @@ require("dotenv").config();
 const placeRoutes = require("./src/routes/placeRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 const itineraryRoutes = require("./src/routes/itinerary");
+const emailRoutes = require("./src/routes/emailRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +25,7 @@ mongoose
 app.use("/api/places", placeRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/itinerary", itineraryRoutes);
+app.use("/api/sendEmail", emailRoutes);
 
 // Start the server
 app.listen(PORT, () => {

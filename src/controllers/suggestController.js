@@ -68,3 +68,27 @@ exports.generateItinerary = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+
+
+// Get hotels related with city
+exports.getHotelsByCity = async (req, res) => {
+  try {
+    const { city } = req.params;
+    // console.log("city::", city);
+
+    // Find hotels that match the city
+    const hotels = await Place.find({
+      city,
+      category: "Hotel"
+    });
+
+    if (!hotels.length) {
+      return res.status(404).json({ message: "No hotels found for this city" });
+    }
+
+    res.json(hotels);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
