@@ -12,4 +12,15 @@ router.post("/get", auth, itineraryController.getItinerary);
 // New route to get all itineraries by Google ID
 router.post("/getAll", auth, itineraryController.getAllItineraries);
 
+// Routes
+router.get('/:itineraryId', itineraryController.getItineraryById);
+
+// Route to save quote with user details
+router.post('/saveWithDetails', itineraryController.saveQuoteWithDetails);
+
+//get all quotes
+router.post("/getAllQuotes", itineraryController.getAllQuotes);
+
+
+
 module.exports = router;
