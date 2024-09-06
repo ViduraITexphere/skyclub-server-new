@@ -1,4 +1,5 @@
 const Place = require("../models/place");
+const Hotel = require("../models/hotel");
 
 exports.generateItinerary = async (req, res) => {
   try {
@@ -69,8 +70,6 @@ exports.generateItinerary = async (req, res) => {
   }
 };
 
-
-
 // Get hotels related with city
 exports.getHotelsByCity = async (req, res) => {
   try {
@@ -78,9 +77,9 @@ exports.getHotelsByCity = async (req, res) => {
     // console.log("city::", city);
 
     // Find hotels that match the city
-    const hotels = await Place.find({
+    const hotels = await Hotel.find({
       city,
-      category: "Hotel"
+      category: "Hotel",
     });
 
     if (!hotels.length) {
