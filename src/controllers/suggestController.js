@@ -1,5 +1,5 @@
 const Place = require("../models/place");
-const Hotel = require("../models/hotel");
+const Hotel = require("../models/Hotel");
 
 exports.generateItinerary = async (req, res) => {
   try {
@@ -85,7 +85,7 @@ exports.getHotelsByCity = async (req, res) => {
     if (!hotels.length) {
       return res
         .status(404)
-        .json({ message: "No hotels found for this city." });
+        .json({ message: "No hotels found for this city.." });
     }
 
     res.json(hotels);
