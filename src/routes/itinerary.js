@@ -13,14 +13,25 @@ router.post("/get", auth, itineraryController.getItinerary);
 router.post("/getAll", auth, itineraryController.getAllItineraries);
 
 // Routes
-router.get('/:itineraryId', itineraryController.getItineraryById);
+router.get("/:itineraryId", itineraryController.getItineraryById);
 
 // Route to save quote with user details
-router.post('/saveWithDetails', itineraryController.saveQuoteWithDetails);
+router.post("/saveWithDetails", itineraryController.saveQuoteWithDetails);
 
 //get all quotes
 router.post("/getAllQuotes", itineraryController.getAllQuotes);
 
+// delete quote
+router.delete("/deleteQuote/:quoteId", itineraryController.deleteQuote);
 
+// revise quote
+// Route to revise a quote
+router.put("/reviseQuote/:quoteId", itineraryController.reviseQuote);
+
+// Route to pin a quote
+router.put("/pinQuote/:quoteId", itineraryController.pinQuote);
+
+// Get pinned quotes
+router.post("/getPinnedQuotes", itineraryController.getPinnedQuotes);
 
 module.exports = router;
