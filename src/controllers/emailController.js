@@ -40,7 +40,19 @@
 const nodemailer = require("nodemailer");
 
 exports.sendEmail = async (req, res) => {
-  const { name, email, message, phone, country } = req.body;
+  const {
+    name,
+    email,
+    phone,
+    country,
+    passportNo,
+    noOfPax,
+    mealPlan,
+    hotelCategory,
+    vehicleType,
+    specialRequirements,
+    children,
+  } = req.body;
 
   let transporter = nodemailer.createTransport({
     host: "mail.skytravelclub.com", // Replace with your cPanel domain's mail server
@@ -66,7 +78,13 @@ exports.sendEmail = async (req, res) => {
            <p>Email: ${email}</p>
            <p>Phone: ${phone}</p>
            <p>Country: ${country}</p>
-           <p>Message: ${message}</p>`,
+           <p>Passport No: ${passportNo}</p>
+            <p>No of Pax: ${noOfPax}</p>
+            <p>Meal Plan: ${mealPlan}</p>
+            <p>Hotel Category: ${hotelCategory}</p>
+            <p>Vehicle Type: ${vehicleType}</p>
+            <p>Special Requirements: ${specialRequirements}</p>
+            <p>Children: ${children}</p>`,
   };
 
   try {
